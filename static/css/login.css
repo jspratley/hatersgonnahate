@@ -53,12 +53,12 @@ body {
     color: white;
 }
 
-.button-app {
+.btn-app {
     background-color: #45ADA8;
     color: white;
 }
 
-.button-app button:hover {
+.btn-app button:hover {
     background-color: #547980;
     color: white;
 }
