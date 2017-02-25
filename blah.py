@@ -11,9 +11,9 @@ from twitter import *
 
 app = Flask(__name__)
 
-@app.route("/login")
-def login():
-    return render_template('login.html')
+@app.route("/")
+def index():
+    return render_template('index.html')
 
 def setup():
     global config
@@ -29,7 +29,7 @@ def setup():
 
 
 if __name__ == '__main__':
-    setup()
+    #setup()
     app.run(debug=False)
     
 #look there is stuff here
