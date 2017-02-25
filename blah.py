@@ -4,6 +4,7 @@ import sys
 import requests
 import urllib
 from flask import Flask
+from flask import render_template
 from flask import request
 from twitter import *
 
@@ -11,36 +12,7 @@ app = Flask(__name__)
 
 @app.route("/login")
 def login():
-    user = request.form.get("inputEmail")
-    pswd = request.form.get("inputPassword")
-    r = requests.post("https://api.twitter.com/oauth/request_token",
-        data={"oauth_callback": urllib.quote("https://www.youtube.com", safe='')}
-        )
-
-    if r.status_code != '200':
-        print("Failed to get request token")
-        return
-
-    oauth_token = r['oauth_token']
-
-    r = requests.get(urllib.quote("https://api.twitter.com/oauth/authorize?oauth_token=" + oauth_token, safe=''))
-
-    if r.status_code != '200':
-        print("Failed to authorize")
-        return
-
-    oauth_verifier = r['oauth_verifier']
-
-    r = requests.post("https://api.twitter.com/oauth/access_token",
-        data={"oauth_token": = urllib.quote(oauth_verifier, safe='')}
-        )
-
-    if r.status_code != '200':
-        print("Failed to get access token")
-        return
-
-    user_oauth_token = r['oauth_token']
-    user_oauth_token_secret = r['oauth_token_secret']
+    return render_template('login.html')
 
     # Now... what to do with these...
 
