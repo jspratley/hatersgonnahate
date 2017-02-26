@@ -1,0 +1,1 @@
+If you want to contribute directly to this project, please fork it to create your own branch.  When you are finished, create a pull request  and explain what changes you have made.  We will look it over and merge your branch ASAP.
