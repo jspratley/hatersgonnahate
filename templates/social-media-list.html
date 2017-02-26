@@ -6,8 +6,9 @@
             <ul>
                 <li><a href="#" class="btn btn-primary">Twitter</a></li>
                 <li><a href="#" class="btn btn-primary">LinkedIn</a></li>
-                <li><a href="#" class="btn btn-default">Add Social Media</a></li>
+                <li><a href="#" class="btn btn-default" data-toggle="modal" data-target="#newSocialModal">Add Social Media</a></li>
             </ul>
         </div>
     </div>
+    {% include 'social-media-modal.html' %}
 {% endblock %}

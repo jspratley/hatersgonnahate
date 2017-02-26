@@ -1,0 +1,27 @@
+{% extends 'social-media-list.html' %}
+{% block content %}
+    <div class="modal fade" id="newSocialModal" tabindex="-1" role="dialog" aria-labelledby="newSocialModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="newSocialModalLabel">Choose and Log In</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="sel1">Select list:</label>
+                  <select class="form-control" id="sel1">
+                    <option>Twitter</option>
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Log In</button>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
