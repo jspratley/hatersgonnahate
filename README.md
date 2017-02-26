@@ -19,3 +19,7 @@ access_key = ""
 access_secret = ""
 
 You can generate these for your own Twitter account by registering your web application with Twitter.
+
+##Contributing
+
+A guide on how to contribute can be found here: https://github.com/jspratley/hatersgonnahate/blob/master/Contributing.md
