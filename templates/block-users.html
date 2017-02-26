@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block content %}
+    <script src="static/js/index.js"></script>
+    <script type=text/javascript>
+        $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    <div class="col-md-6">
+        <div id="block-users">
+            <h3>Block Users</h3>
+            <form>
+                <div class="form-group">
+                    <label for="searchUsers">Search for Users to Block</label>
+                    <input name="search" type="search" class="form-control" id="searchUsers" aria-describedby="searchHelp" placeholder="Search">
+                </div>
+                <button id="search" type="submit" class="btn btn-primary">Search</button>
+            </form>
+
+            <ul id="results"></ul>
+        </div>
+    </div>
+{% endblock %}

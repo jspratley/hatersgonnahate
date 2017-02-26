@@ -23,14 +23,14 @@ def search_twitter_profiles(t_c, name, num_results=20):
     return user_profiles
 
 
-def block_twitter_profile(t_c, profile):
+def block_twitter_profile(t_c, screen_name):
     """
     Attempts to block a user profile via screen name. Logs an error if this fails
     :param profile: A user profile that should be blocked for the specified account
     """
     try:
-        t_c.blocks.create(screen_name=profile.screen_name)
-        print("Successful Block : " + str(profile))
+        t_c.blocks.create(screen_name=screen_name)
+        print("Successful Block : " + screen_name)
     except:
         sys.stderr.write(block_twitter_profile.__name__ + ": No user profiles found.\n")
 

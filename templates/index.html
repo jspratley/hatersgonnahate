@@ -6,6 +6,8 @@
     <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="static/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Leckerli+One|Roboto" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="static/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
     {% block content %}
@@ -14,12 +16,9 @@
         <div class="container" id="content">
             <div class="row">
                 {% include 'social-media-list.html' %}
-                {% include 'blocked-list.html' %}
+                {% include 'block-users.html' %}
             </div>
         </div>
     {% endblock %}
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

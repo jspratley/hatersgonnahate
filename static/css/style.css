@@ -25,7 +25,7 @@
     margin-top: 50px;
 }
 
-#blocked-list {
+#block-users {
     font-family: 'Roboto', sans-serif;
     width: 50%;
     margin-left: auto;
@@ -39,7 +39,7 @@
     margin-top: 20px;
 }
 
-#blocked-list ul {
+#block-users ul {
     list-style: none;
     padding-left: 0;
     margin-top: 20px;
@@ -47,6 +47,10 @@
 
 #social-media-list a {
     width: 100%;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
 }
 
 #content {
