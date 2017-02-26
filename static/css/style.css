@@ -13,8 +13,8 @@ body {
     z-index: 1000;
 }
 
-#social-media {
-    border-right: 2px solid gray;
+#block-users-container {
+    border-left: 2px solid gray;
 }
 
 #social-media-list {

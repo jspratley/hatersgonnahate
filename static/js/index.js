@@ -22,11 +22,12 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.block', function () {
+        var button = $(this);
         $.getJSON($SCRIPT_ROOT + '/block', {
             screenName: $(this).attr('id')
         }, function(data) {
             alert(data.result);
-            $(this).replaceWith('<p>Blocked</p>');
+            button.replaceWith('<p>Blocked</p>');
         });
     });
 });
