@@ -12,10 +12,18 @@ def search_twitter_profiles(t_c, name, num_results=20):
     :return: A list of UserProfile results that match the name.
     """
     user_profiles = []
+    blocked_screennames = []
     user_search_query = t_c.users.search(q=name, count=num_results)
+    blocked_query = t_c.blocks.list()
+    for block_dict in blocked_query["users"]:
+        blocked_screennames.append(block_dict["screen_name"])
     for user_dict in user_search_query:
+        if user_dict["screen_name"] in blocked_screennames:
+            is_on_blocked_list = "Yes"
+        else:
+            is_on_blocked_list = "No"
         user_profiles.append(userprofile.UserProfile(user_dict["name"], user_dict["screen_name"], user_dict["id_str"],
-                                                     user_dict["profile_background_image_url_https"]))
+                                                     user_dict["profile_background_image_url_https"], is_on_blocked_list))
     if len(user_profiles) is 0:
         sys.stderr.write(search_twitter_profiles.__name__ + ": No user profiles found.\n")
     else:

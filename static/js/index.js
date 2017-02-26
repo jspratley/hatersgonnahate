@@ -10,7 +10,11 @@ $(document).ready(function() {
                 for (var res in data.result) {
                     $('#results').append('<li>' + data.result[res]['name'] + ' ' + data.result[res]['screen_name'] + ' ' +
                     data.result[res]['user_id'] + '</li>');
-                    $('#results').append('<button class="btn btn-primary block" id="' + data.result[res]['screen_name'] + '">Block</button');
+                    if (data.result[res]['on_block_list'] === "Yes") {
+                        $('#results').append('<p>Blocked</p>');
+                    } else {
+                        $('#results').append('<button class="btn btn-primary block" id="' + data.result[res]['screen_name'] + '">Block</button');
+                    }
                 }
             });
             return false;
@@ -22,6 +26,7 @@ $(document).ready(function() {
             screenName: $(this).attr('id')
         }, function(data) {
             alert(data.result);
+            $(this).replaceWith('<p>Blocked</p>');
         });
     });
 });

@@ -24,6 +24,7 @@ def convert_to_dict(profile_array):
         temp_dict['screen_name'] = profile.screen_name
         temp_dict['user_id'] = profile.user_id
         temp_dict['profile_picture_link'] = profile.profile_picture_link
+        temp_dict['on_block_list'] = profile.on_block_list
         profile_dict_array.append(temp_dict)
     return profile_dict_array
 
@@ -34,7 +35,7 @@ def index():
 @app.route('/search', methods=['POST', 'GET'])
 def search():
     search_term = request.args.get('searchText', "", type=str)
-    profiles = twitterapitests.search_twitter_profiles(twitter_config, search_term, 5)
+    profiles = twitterapitests.search_twitter_profiles(twitter_config, search_term, 10)
     serialized_results = convert_to_dict(profiles)
     return jsonify(result=serialized_results)
 
